@@ -1,0 +1,23 @@
+class Tree
+{
+    //Function to check whether a binary tree is foldable or not.
+    boolean IsFoldable(Node node) 
+	{ 
+		// your code 
+		if(node==null)return true;
+		return result(node.left,node.right);
+		
+	} 
+	boolean result(Node left,Node right){
+	    if(left==null&&right == null)
+	       return true;
+	    if(left==null||right==null)
+	       return false;
+	   boolean leftR=result(left.left,right.right);
+	   boolean rightR=result(left.right,right.left);
+	   return leftR && rightR;
+	    
+	    
+	    
+	}
+}
