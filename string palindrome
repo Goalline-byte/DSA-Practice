@@ -1,0 +1,33 @@
+import java.util.Scanner;
+
+public class RecursionPalind {
+    static boolean recpali(String str,int start, int end){
+        if(start==end)
+            return true;
+        if((str.charAt(start))!=(str.charAt(end)))
+            return false;
+        if(start<end+1)
+            return recpali(str,start+1,end-1);
+        return true;
+    
+
+    }
+    static boolean ispalindrome(String str){
+        int n = str.length();
+        if(n==0)
+          return true;
+
+        return recpali(str, 0, n-1);
+    }
+    public static void main(String args[]){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a string");
+        String str = sc.nextLine();
+        if(ispalindrome(str))
+            System.out.println("yes");
+        else
+        System.out.println("No");
+    }
+  
+    
+}
