@@ -1,18 +1,14 @@
-import java.util.*;
-class Reverse{
-    public static void main(String[] args){
-        Scanner sc = new Scanner(System.in);
-        System.out.print("Enetr a String");
-        String str = sc.nextLine();
-        String rev = sc.nextLine();
-        for(int i = str.length()-1; i>=0;i--){
-            rev = rev + str.charAt(i);
+public class StringPalindrome  {
+    public static void main (String [] args) {
+        String str = "madam";
+        StringBuffer buffer = new StringBuffer(str);
+        buffer.reverse();
+        String data = buffer.toString();
+        if(str.equals(data)) {
+            System.out.println("Given string is palindrome");
         }
-        System.out.println("Reverse a String: " +str);
-        if(str.equals(rev)){
-            System.out.println("string is palindrome");
+        else {
+            System.out.println("Given string is not palindrome");
         }
-        else
-           System.out.println("string is not palindrome");
     }
 }
